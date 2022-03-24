@@ -19,7 +19,7 @@ exit
 mkdir "%tmp%\PL-Temp"
 ECHO Set objWinHttp = CreateObject("WinHttp.WinHttpRequest.5.1") >> %tmp%\PL-Temp\dl.vbs
 ECHO. >> %tmp%\PL-Temp\dl.vbs
-ECHO URL = "https://github.com/pikakid98/cat-warfare-pre-alpha-archive/releases/download/v0.0.1/Cat.Warfare.V0.0.1.Pre-Alpha.7z" >> %tmp%\PL-Temp\dl.vbs
+ECHO URL = "https://github.com/Git-Pikakid98/cat-warfare-pre-alpha-archive/releases/download/v0.0.1/Cat.Warfare.V0.0.1.Pre-Alpha.7z" >> %tmp%\PL-Temp\dl.vbs
 ECHO objWinHttp.open "GET", URL, False >> %tmp%\PL-Temp\dl.vbs
 ECHO objWinHttp.send "" >> %tmp%\PL-Temp\dl.vbs
 ECHO. >> %tmp%\PL-Temp\dl.vbs

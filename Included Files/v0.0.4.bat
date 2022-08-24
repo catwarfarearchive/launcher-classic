@@ -1,7 +1,4 @@
 @ECHO OFF
-if exist "launcherportable.txt" (
-GOTO Check-LP
-) else (
 
 if exist "portable.txt" (
 GOTO Check-P
@@ -9,24 +6,16 @@ GOTO Check-P
 GOTO Check-NP
 )
 
-)
-
-:Check-LP
-if exist "..\Cat Warfare Pre-Alpha Archive" (
-    exit
-) else (
-    mkdir "..\Cat Warfare Pre-Alpha Archive"
-)
-
 :Check-P
-if exist "Data" (
-    exit
+if exist "Data\v0.0.4\CatWarfare4.exe" (
+    GOTO Installed-P
 ) else (
-    mkdir "Data"
+    mkdir "Data\v0.0.4"
+    GOTO NotInstalled
 )
 
 :Check-NP
-if exist "%userprofile%\Documents\Pikakid98 Launcher\Cat Warfare Pre-Alpha Archive\v0.0.4\CatWarfare4.exe" (
+if exist "%userprofile%\Documents\Cat Warfare Pre-Alpha Archive\v0.0.4\CatWarfare4.exe" (
     GOTO Installed
 ) else (
     GOTO NotInstalled
@@ -36,7 +25,12 @@ if exist "%userprofile%\Documents\Pikakid98 Launcher\Cat Warfare Pre-Alpha Archi
 ::----------------------------------------------------------
 :Installed
 ;Title [Launching] Cat Warfare Pre-Alpha (v0.0.4)
-START "" "%userprofile%\Documents\Pikakid98 Launcher\Cat Warfare Pre-Alpha Archive\v0.0.4\CatWarfare4.exe"
+START "" "%userprofile%\Documents\Cat Warfare Pre-Alpha Archive\v0.0.4\CatWarfare4.exe"
+exit
+
+:Installed-P
+;Title [Launching] Cat Warfare Pre-Alpha (v0.0.4)
+START "" "Data\v0.0.4\CatWarfare4.exe"
 exit
 ::----------------------------------------------------------
 
@@ -76,26 +70,10 @@ ECHO End Function >> %tmp%\CWPAL-Temp\dl.vbs
 
 START /wait "" "%tmp%\CWPAL-Temp\dl.vbs"
 
-7zr.exe x "%tmp%\CWPAL-Temp\Cat.Warfare.v0.0.4.Pre-Alpha.7z" -o"%userprofile%\Documents\Pikakid98 Launcher\Cat Warfare Pre-Alpha Archive\v0.0.4"
-
-if exist "launcherportable.txt" (
-GOTO L-Portable
-) else (
-
 if exist "portable.txt" (
 GOTO Portable
 ) else (
 GOTO Not Portable
-)
-
-)
-
-:L-Portable
-if exist "Data" (
-GOTO Extract-LP
-) else (
-mkdir "..\Cat Warfare Pre-Alpha Archive\v0.0.4"
-GOTO Extract-LP
 )
 
 :Portable
@@ -107,23 +85,19 @@ GOTO Extract-P
 )
 
 :Not Portable
-if exist "%userprofile%\Documents\Pikakid98 Launcher" (
+if exist "%userprofile%\Documents\Cat Warfare Pre-Alpha Archive" (
 GOTO Extract-NP
 ) else (
-mkdir "%userprofile%\Documents\Pikakid98 Launcher\Cat Warfare Pre-Alpha Archive\v0.0.4"
+mkdir "%userprofile%\Documents\Cat Warfare Pre-Alpha Archive\v0.0.4"
 GOTO Extract-NP
 )
 
 :Extract-NP
-7zr.exe x "%tmp%\CWPAL-Temp\Cat.Warfare.V0.0.4.Pre-Alpha.7z" -o"%userprofile%\Documents\Pikakid98 Launcher\Cat Warfare Pre-Alpha Archive\v0.0.4"
+7zr.exe x "%tmp%\CWPAL-Temp\Cat.Warfare.V0.0.4.Pre-Alpha.7z" -o"%userprofile%\Documents\Cat Warfare Pre-Alpha Archive\v0.0.4"
 GOTO End
 
 :Extract-P
 7zr.exe x "%tmp%\CWPAL-Temp\Cat.Warfare.V0.0.4.Pre-Alpha.7z" -o"Data\v0.0.4"
-GOTO End
-
-:Extract-LP
-7zr.exe x "%tmp%\CWPAL-Temp\Cat.Warfare.V0.0.4.Pre-Alpha.7z" -o"..\Cat Warfare Pre-Alpha Archive\v0.0.4"
 GOTO End
 
 :End

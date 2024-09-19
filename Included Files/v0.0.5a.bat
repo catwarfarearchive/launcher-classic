@@ -7,15 +7,15 @@ GOTO Check-NP
 )
 
 :Check-P
-if exist "Data\v0.0.5a\CatWarfare5.3.0.exe" (
+if exist "Data\v0.0.5.3\CatWarfare5.3.0.exe" (
     GOTO Installed-P
 ) else (
-    mkdir "Data\v0.0.5a"
+    mkdir "Data\v0.0.5.3"
     GOTO NotInstalled
 )
 
 :Check-NP
-if exist "%userprofile%\Documents\Cat Warfare Pre-Alpha Archive\v0.0.5a\CatWarfare5.3.0.exe" (
+if exist "%userprofile%\Documents\Cat Warfare Pre-Alpha Archive\v0.0.5.3\CatWarfare5.3.0.exe" (
     GOTO Installed
 ) else (
     GOTO NotInstalled
@@ -23,27 +23,27 @@ if exist "%userprofile%\Documents\Cat Warfare Pre-Alpha Archive\v0.0.5a\CatWarfa
 
 ::----------------------------------------------------------
 :Installed
-;Title [Launching] Cat Warfare Pre-Alpha (v0.0.5a)
-START "" "%userprofile%\Documents\Cat Warfare Pre-Alpha Archive\v0.0.5a\CatWarfare5.3.0.exe"
+;Title [Launching] Cat Warfare Pre-Alpha (v0.0.5.3)
+START "" "%userprofile%\Documents\Cat Warfare Pre-Alpha Archive\v0.0.5.3\CatWarfare5.3.0.exe"
 exit
 
 :Installed-P
-;Title [Launching] Cat Warfare Pre-Alpha (v0.0.5a)
-START "" "Data\v0.0.5a\CatWarfare5.3.0.exe"
+;Title [Launching] Cat Warfare Pre-Alpha (v0.0.5.3)
+START "" "Data\v0.0.5.3\CatWarfare5.3.0.exe"
 exit
 ::----------------------------------------------------------
 
 ::----------------------------------------------------------
 :NotInstalled
-;Title [Downloading] Cat Warfare Pre-Alpha (v0.0.5a)
+;Title [Downloading] Cat Warfare Pre-Alpha (v0.0.5.3)
 mkdir "%tmp%\CWPAL-Temp"
 ECHO Set objWinHttp = CreateObject("WinHttp.WinHttpRequest.5.1") >> %tmp%\CWPAL-Temp\dl.vbs
 ECHO. >> %tmp%\CWPAL-Temp\dl.vbs
-ECHO URL = "https://github.com/Git-Pikakid98/cat-warfare-pre-alpha-archive/releases/download/v0.0.5a/Cat.Warfare.v0.0.5a.Pre-Alpha.7z" >> %tmp%\CWPAL-Temp\dl.vbs
+ECHO URL = "https://github.com/catwarfarearchive/builds/raw/refs/heads/main/Cat-Warfare/v0.0.5.3.7z" >> %tmp%\CWPAL-Temp\dl.vbs
 ECHO objWinHttp.open "GET", URL, False >> %tmp%\CWPAL-Temp\dl.vbs
 ECHO objWinHttp.send "" >> %tmp%\CWPAL-Temp\dl.vbs
 ECHO. >> %tmp%\CWPAL-Temp\dl.vbs
-ECHO SaveBinaryData "%tmp%\CWPAL-Temp\Cat.Warfare.v0.0.5a.Pre-Alpha.7z",objWinHttp.responseBody >> %tmp%\CWPAL-Temp\dl.vbs
+ECHO SaveBinaryData "%tmp%\CWPAL-Temp\v0.0.5.3.7z",objWinHttp.responseBody >> %tmp%\CWPAL-Temp\dl.vbs
 ECHO. >> %tmp%\CWPAL-Temp\dl.vbs
 ECHO Function SaveBinaryData(FileName, Data) >> %tmp%\CWPAL-Temp\dl.vbs
 ECHO. >> %tmp%\CWPAL-Temp\dl.vbs
@@ -79,7 +79,7 @@ GOTO Not Portable
 if exist "Data" (
 GOTO Extract-P
 ) else (
-mkdir "Data\v0.0.5a"
+mkdir "Data\v0.0.5.3"
 GOTO Extract-P
 )
 
@@ -87,16 +87,16 @@ GOTO Extract-P
 if exist "%userprofile%\Documents\Cat Warfare Pre-Alpha Archive" (
 GOTO Extract-NP
 ) else (
-mkdir "%userprofile%\Documents\Cat Warfare Pre-Alpha Archive\v0.0.5a"
+mkdir "%userprofile%\Documents\Cat Warfare Pre-Alpha Archive\v0.0.5.3"
 GOTO Extract-NP
 )
 
 :Extract-NP
-7zr.exe x "%tmp%\CWPAL-Temp\Cat.Warfare.V0.0.5a.Pre-Alpha.7z" -o"%userprofile%\Documents\Cat Warfare Pre-Alpha Archive\v0.0.5a"
+7zr.exe x "%tmp%\CWPAL-Temp\v0.0.5.3.7z" -o"%userprofile%\Documents\Cat Warfare Pre-Alpha Archive\v0.0.5.3"
 GOTO End
 
 :Extract-P
-7zr.exe x "%tmp%\CWPAL-Temp\Cat.Warfare.V0.0.5a.Pre-Alpha.7z" -o"Data\v0.0.5a"
+7zr.exe x "%tmp%\CWPAL-Temp\v0.0.5.3.7z" -o"Data\v0.0.5.3"
 GOTO End
 
 :End

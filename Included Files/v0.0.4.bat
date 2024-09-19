@@ -40,11 +40,11 @@ exit
 mkdir "%tmp%\CWPAL-Temp"
 ECHO Set objWinHttp = CreateObject("WinHttp.WinHttpRequest.5.1") >> %tmp%\CWPAL-Temp\dl.vbs
 ECHO. >> %tmp%\CWPAL-Temp\dl.vbs
-ECHO URL = "https://github.com/Git-Pikakid98/cat-warfare-pre-alpha-archive/releases/download/v0.0.4/Cat.Warfare.v0.0.4.Pre-Alpha.7z" >> %tmp%\CWPAL-Temp\dl.vbs
+ECHO URL = "https://github.com/catwarfarearchive/builds/raw/refs/heads/main/Cat-Warfare/v0.0.4.7z" >> %tmp%\CWPAL-Temp\dl.vbs
 ECHO objWinHttp.open "GET", URL, False >> %tmp%\CWPAL-Temp\dl.vbs
 ECHO objWinHttp.send "" >> %tmp%\CWPAL-Temp\dl.vbs
 ECHO. >> %tmp%\CWPAL-Temp\dl.vbs
-ECHO SaveBinaryData "%tmp%\CWPAL-Temp\Cat.Warfare.v0.0.4.Pre-Alpha.7z",objWinHttp.responseBody >> %tmp%\CWPAL-Temp\dl.vbs
+ECHO SaveBinaryData "%tmp%\CWPAL-Temp\v0.0.4.7z",objWinHttp.responseBody >> %tmp%\CWPAL-Temp\dl.vbs
 ECHO. >> %tmp%\CWPAL-Temp\dl.vbs
 ECHO Function SaveBinaryData(FileName, Data) >> %tmp%\CWPAL-Temp\dl.vbs
 ECHO. >> %tmp%\CWPAL-Temp\dl.vbs
@@ -93,11 +93,11 @@ GOTO Extract-NP
 )
 
 :Extract-NP
-7zr.exe x "%tmp%\CWPAL-Temp\Cat.Warfare.V0.0.4.Pre-Alpha.7z" -o"%userprofile%\Documents\Cat Warfare Pre-Alpha Archive\v0.0.4"
+7zr.exe x "%tmp%\CWPAL-Temp\V0.0.4.7z" -o"%userprofile%\Documents\Cat Warfare Pre-Alpha Archive\v0.0.4"
 GOTO End
 
 :Extract-P
-7zr.exe x "%tmp%\CWPAL-Temp\Cat.Warfare.V0.0.4.Pre-Alpha.7z" -o"Data\v0.0.4"
+7zr.exe x "%tmp%\CWPAL-Temp\V0.0.4.7z" -o"Data\v0.0.4"
 GOTO End
 
 :End

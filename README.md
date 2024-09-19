@@ -1,4 +1,4 @@
-# Cat Warfare Pre-Alpha Archive Luancher
+# Cat Warfare Pre-Alpha Archive Launcher
 
 <code>Legal Disclaimer: This game is owned by SonicboomColt and Not-So Classic Games and has been uploaded with explicit permission to do so</code>
 \

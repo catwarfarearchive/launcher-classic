@@ -1,10 +1,9 @@
-# Cat Warfare Pre-Alpha Archive Launcher
+# Cat Warfare Prototype Archive Launcher Classic
 
-<code>Legal Disclaimer: This game is owned by SonicboomColt and Not-So Classic Games and has been uploaded with explicit permission to do so</code>
-\
-Hosted on behalf of [SonicboomColt](https://github.com/sonicboomcolt)
-This repo is an archive of the very first few builds of the commercial game known as [Cat Warfare](https://store.steampowered.com/app/923370). Please be aware that these builds don't represent the final game in anyway and simply exist for archival purposes
+> [!WARNING]
+> This version is currently being reworked as the downloader is non-functional. Once the new downloader is out, This version will be deprecated
 
+The classic launcher for the Cat Warfare Prototype Archive Launcher (CWPAL) made by [Pikakid98](https://pikakid98.github.io)
 # Launcher Build Requirements
 
 [Game Maker 8.1](https://archive.org/details/GameMaker81)
@@ -14,10 +13,3 @@ This repo is an archive of the very first few builds of the commercial game know
 [7-Zip (Alone Reduced) (v22.1)](https://www.7-zip.org/a/7zr.exe)
 \
 [BankGthd Font](https://www.fonttr.com/bankgthd-font)
-
-<details>
-<summary>Requirements For Older Versions</summary>
-  
-[7-Zip (Alone (v21.07)](https://www.7-zip.org/a/7z2107-extra.7z) (v1.0 - v1.1)
-  
-</details>
